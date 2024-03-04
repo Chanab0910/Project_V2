@@ -134,7 +134,7 @@ class Analyse:
         self.dict_of_where_they_came['Final'] = 0
         self.dict_of_where_they_came['Win'] = 0
         highest_is_winner = False
-        for i in range(1, 10):
+        for i in range(1, 25):
             '''Can delete first bit and use dict to find highest result'''
             win = False
             highest_in_sim = 0
@@ -239,7 +239,7 @@ class Analyse:
         self.average_goals_conceded_in_ko = ko_total / ko_count
 
     def number_of_wins(self):
-        for i in range(1, 10):
+        for i in range(1, 25):
             all_games_in_sim = self.sess.query(CountryMatch.match_id).filter_by(
                 country_id=self.country_object.country_id, simulation_number=i).all()
             for match in all_games_in_sim:
@@ -294,3 +294,6 @@ class Analyse:
             percentage_list_lost.index(max(percentage_list_lost))]
 
 
+if __name__ == "__main__":
+    g = Analyse()
+    g.controller('England')

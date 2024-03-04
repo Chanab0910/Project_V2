@@ -89,7 +89,7 @@ class ResultGUI(tk.Tk):
         ax = fig.add_subplot(111)
         ax.pie(data, radius=1, labels=titles, autopct='%0.2f%%')
         pie = FigureCanvasTkAgg(fig)
-        pie.get_tk_widget().place(x=1310, y=0)
+        pie.get_tk_widget().place(x=800, y=0) #should be x=1310, y=0
 
     def go_to_next_page(self):
         self.destroy()

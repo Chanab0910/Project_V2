@@ -36,7 +36,7 @@ class GeneralStatsGUI(tk.Tk):
         self.order_by_ga = tk.Button(self,text='Order by GA',command=self.create_GA_table)
         self.order_by_gc = tk.Button(self, text='Order by GC', command=self.create_GC_table)
         self.order_by_overall= tk.Button(self, text='Order by Overall', command=self.create_table)
-        self.num_wins()
+        self.create_pie()
         self.place_widgets()
 
 
@@ -137,13 +137,16 @@ class GeneralStatsGUI(tk.Tk):
 
 
     def mergeSort(self,myList):
+        '''chnage to list then merge it'''
+
         keys = list(myList.keys())
         values = list(myList.values())
         sorted_value_index = np.argsort(values)
         sorted_dict = {keys[i]: values[i] for i in sorted_value_index}
         return sorted_dict
 
-    def num_wins(self):
+    def create_pie(self):
+
         list_of_countries = ['Argentina', 'Australia', 'Austria', 'Belgium', 'Canada', 'Croatia', 'Czech Republic',
                              'Denmark', 'England', 'Finland', 'France', 'Germany',
                              'Hungary', 'Iceland', 'Ireland', 'Italy', 'Mexico', 'Ghana', 'Netherlands', 'Morocco',

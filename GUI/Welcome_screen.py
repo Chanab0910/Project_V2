@@ -9,12 +9,10 @@ class TestGUI(tk.Tk):
     def __init__(self):
         super().__init__()
         self.geometry("1239x697")
-
         self.bg_image = tk.PhotoImage(file="../img/bg.png")
         self.start_image = tk.PhotoImage(file=r"../img/start.png")
         self.quit_image = tk.PhotoImage(file=r"../img/quit.png")
         self.title_image = tk.PhotoImage(file=r"../img/title.png")
-
         self.background = tk.Label(self, image=self.bg_image, highlightthickness=0, borderwidth=0)
         self.title = tk.Label(self, image=self.title_image, highlightthickness=0, borderwidth=0)
         self.start = tk.Button(self, image=self.start_image, highlightthickness=0, borderwidth=0, command=self.go_to_next_page)
